@@ -22,6 +22,7 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
+      - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-blur-my-shell
