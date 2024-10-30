@@ -45,6 +45,7 @@ modules:
       - qemu
       - mullvad-vpn
       - libappindicator-gtk3
+      - waydroid
     remove:
       - firefox
       - firefox-langpacks
