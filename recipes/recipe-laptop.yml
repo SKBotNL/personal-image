@@ -65,6 +65,7 @@ modules:
         - io.github.ungoogled_software.ungoogled_chromium
         - dev.vencord.Vesktop
         - com.valvesoftware.Steam
+        - com.valvesoftware.SteamLink
         - com.github.tchx84.Flatseal
         - org.onlyoffice.desktopeditors
         - org.mozilla.Thunderbird
@@ -83,5 +84,9 @@ modules:
         - libvirtd.socket
         - mullvad-daemon.service
         - mullvad-early-boot-blocking.service
+
+  - type: gschema-overrides
+    include:
+      - zz1-overrides.gschema.override
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
