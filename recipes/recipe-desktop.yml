@@ -1,0 +1,80 @@
+# image will be published to ghcr.io/<user>/<name>
+name: personal-image-desktop
+# description will be included in the image's metadata
+description: This is my personal OS image.
+
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: 40
+
+modules:
+  - type: akmods
+    base: main
+    install:
+      - openrazer
+      - v4l2loopback
+
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
+      - https://repository.mullvad.net/rpm/stable/mullvad.repo
+    install:
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-gsconnect
+      - gnome-shell-extension-logo-menu
+      - gnome-shell-extension-search-light
+      - android-tools
+      - cascadia-code-fonts
+      - docker-cli
+      - docker-compose
+      - google-droid-sans-mono-fonts
+      - google-go-mono-fonts
+      - ibm-plex-mono-fonts
+      - libvirt
+      - libvirt-nss
+      - mozilla-fira-mono-fonts
+      - p7zip
+      - qemu
+      - mullvad-vpn
+      - libappindicator-gtk3
+    remove:
+      - firefox
+      - firefox-langpacks
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      # repo-name: flathub
+      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      install:
+        - com.brave.Browser
+        - io.github.ungoogled_software.ungoogled_chromium
+        - dev.vencord.Vesktop
+        - com.valvesoftware.Steam
+        - com.github.tchx84.Flatseal
+        - org.onlyoffice.desktopeditors
+        - org.mozilla.Thunderbird
+        - org.kde.krita
+        - org.inkscape.Inkscape
+        - com.obsproject.Studio
+        - org.kde.kdenlive
+        - it.mijorus.gearlever
+        - com.usebottles.bottles
+      # remove:
+
+    - type: systemd
+    system:
+      enabled: 
+        - libvirt.socket
+        - mullvad-daemon.service
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
