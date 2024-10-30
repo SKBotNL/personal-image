@@ -22,7 +22,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
-      - https://copr.fedorainfracloud.org/coprs/sentry/switcheroo-control_discrete/repo/fedora-%OS_VERSION%/sentry-switcheroo-control_discrete-fedora-%OS_VERSION%.repo
     optfix:
       - Mullvad VPN
     install:
@@ -50,7 +49,9 @@ modules:
       - firefox
       - firefox-langpacks
     replace:
-      - switcheroo-control
+      - from-repo: https://copr.fedorainfracloud.org/coprs/sentry/switcheroo-control_discrete/repo/fedora-%OS_VERSION%/sentry-switcheroo-control_discrete-fedora-%OS_VERSION%.repo
+        packages: 
+          - switcheroo-control
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -73,6 +74,7 @@ modules:
         - org.kde.kdenlive
         - it.mijorus.gearlever
         - com.usebottles.bottles
+        - ca.desrt.dconf-editor
       # remove:
 
   - type: systemd
@@ -80,5 +82,6 @@ modules:
       enabled: 
         - libvirtd.socket
         - mullvad-daemon.service
+        - mullvad-early-boot-blocking.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
