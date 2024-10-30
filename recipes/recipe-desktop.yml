@@ -64,6 +64,7 @@ modules:
         - com.valvesoftware.Steam
         - com.valvesoftware.SteamLink
         - com.github.tchx84.Flatseal
+        - io.github.dvlv.boxbuddyrs
         - org.onlyoffice.desktopeditors
         - org.mozilla.Thunderbird
         - org.kde.krita
