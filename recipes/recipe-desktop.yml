@@ -70,7 +70,7 @@ modules:
         - com.usebottles.bottles
       # remove:
 
-    - type: systemd
+  - type: systemd
     system:
       enabled: 
         - libvirt.socket
