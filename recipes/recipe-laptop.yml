@@ -3,14 +3,13 @@ name: personal-image-laptop
 # description will be included in the image's metadata
 description: This is my personal OS image.
 
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 40
 
 modules:
   - type: akmods
     base: main
     install:
-      - nvidia
       - v4l2loopback
 
   - type: files
@@ -32,8 +31,8 @@ modules:
       - gnome-shell-extension-search-light
       - android-tools
       - cascadia-code-fonts
-      - docker-cli
-      - docker-compose
+      - docker-ce-cli
+      - docker-compose-plugin
       - google-droid-sans-mono-fonts
       - google-go-mono-fonts
       - ibm-plex-mono-fonts

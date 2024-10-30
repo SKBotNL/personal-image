@@ -31,8 +31,8 @@ modules:
       - gnome-shell-extension-search-light
       - android-tools
       - cascadia-code-fonts
-      - docker-cli
-      - docker-compose
+      - docker-ce-cli
+      - docker-compose-plugin
       - google-droid-sans-mono-fonts
       - google-go-mono-fonts
       - ibm-plex-mono-fonts
