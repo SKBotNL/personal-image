@@ -83,8 +83,6 @@ modules:
     system:
       enabled: 
         - libvirtd.socket
-        - mullvad-daemon.service
-        - mullvad-early-boot-blocking.service
 
   - type: gschema-overrides
     include:
