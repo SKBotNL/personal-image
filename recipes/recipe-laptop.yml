@@ -22,8 +22,8 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
-    optfix:
-      - Mullvad VPN
+    # optfix:
+      # - Mullvad VPN
     install:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-blur-my-shell
@@ -43,7 +43,8 @@ modules:
       - mozilla-fira-mono-fonts
       - p7zip
       - qemu
-      - https://github.com/mullvad/mullvadvpn-app/releases/download/2024.7/MullvadVPN-2024.7_x86_64.rpm
+      # Optfix doesn't work
+      # - mullvad-vpn
       - libappindicator-gtk3
       - waydroid
     remove:
