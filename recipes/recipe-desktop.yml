@@ -26,12 +26,6 @@ modules:
     # optfix:
       # - Mullvad VPN
     install:
-      # - gnome-shell-extension-appindicator
-      # - gnome-shell-extension-blur-my-shell
-      # - gnome-shell-extension-dash-to-dock
-      # - gnome-shell-extension-gsconnect
-      # - gnome-shell-extension-logo-menu
-      # - gnome-shell-extension-search-light
       - android-tools
       - cascadia-code-fonts
       - docker-ce-cli
@@ -60,7 +54,6 @@ modules:
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        # - org.gnome.TextEditor
         - org.kde.kwrite
         - com.brave.Browser
         - io.github.ungoogled_software.ungoogled_chromium
@@ -84,10 +77,6 @@ modules:
     system:
       enabled: 
         - libvirtd.socket
-
-  # - type: gschema-overrides
-    # include:
-      # - zz1-overrides.gschema.override
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
