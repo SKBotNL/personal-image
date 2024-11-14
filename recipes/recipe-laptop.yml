@@ -4,7 +4,7 @@ name: personal-image-laptop
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/kinoite-nvidia
-image-version: 40
+image-version: 41
 
 modules:
   - type: akmods
